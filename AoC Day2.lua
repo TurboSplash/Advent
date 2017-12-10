@@ -1,7 +1,7 @@
 local path = "input_day_2"
 
 --day 2 part 1
-local function find_checksum(path)
+local function calculate_checksum(path)
   local checksum  = 0
   for line in io.lines(path) do 
     local max = 0
@@ -28,7 +28,7 @@ local function find_evenly_divisible(string)
   end
 end
 
-local function find_checksum_even(path)
+local function calculate_checksum_even(path)
   local checksum  = 0
   for line in io.lines(path) do 
     checksum = checksum + find_evenly_divisible(line)
@@ -36,5 +36,5 @@ local function find_checksum_even(path)
   return checksum
 end
 
-print("part 1: " .. find_checksum(path))
-print("Part 2: " .. find_checksum_even(path))
+print("part 1: " .. calculate_checksum(path))
+print("Part 2: " .. calculate_checksum_even(path))
