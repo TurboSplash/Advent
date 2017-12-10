@@ -1,7 +1,7 @@
 io.input("input_day_1")
 local input = io.read("*all")
 
---part1
+
 local function string_to_table(string)
   for i=1 , string:len() do
     table[i] = string:sub(i,i)
@@ -9,6 +9,7 @@ local function string_to_table(string)
   return table
 end
 
+--part1
 local function solve_captcha(input)
   local sum = 0
   local table = string_to_table(input)
