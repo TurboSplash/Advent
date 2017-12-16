@@ -1,6 +1,7 @@
 local passphrases = "input_day_4"
 
---part 1 
+--https://adventofcode.com/2017/day/4
+
 local function line_to_table(line)
   local table = {}
   local i = 1
