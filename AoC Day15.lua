@@ -23,30 +23,30 @@ local function generators(val_1, val_2)
 end
 
 --part 2
-local generator1 = coroutine.create(function (val, seed)
-    for i=1, iterations_2 do
-      if val % seed == 0 then 
+local generator1 = coroutine.create(function (val)
+    while 1 do
+      val = (val * gen_1_factor) % den
+      if val % 4 == 0 then 
         coroutine.yield(val % bits)
       end
-      val = (val * gen_1_factor) % den
     end
   end)
 
-local generator2 = coroutine.create(function (val, seed)
-    for i=1, iterations_2 do
-      if val % seed == 0 then 
+local generator2 = coroutine.create(function (val)
+    while 1 do
+      val = (val * gen_2_factor) % den
+      if val % 8 == 0 then 
         coroutine.yield(val % bits)
       end
-      val = (val * gen_2_factor) % den
     end
   end)
 
 local function judge()
   local acc = 0
-  local t1, t2, val_1, val_2 = true, true, nil, nil
-  while t1 or t2 do
-    t1, val_1 = coroutine.resume(generator1, input_1, 4)
-    t2, val_2 = coroutine.resume(generator2, input_2, 8)
+  local t1, t2, val_1, val_2 = true, true, 0, 0
+  for i=1, iterations_2 do
+    t1, val_1 = coroutine.resume(generator1, input_1)
+    t2, val_2 = coroutine.resume(generator2, input_2)
     if val_1 == val_2 then
       acc = acc + 1
     end
@@ -56,3 +56,5 @@ end
 
 --print(generators(input_1, input_2))
 print(judge())
+
+--answer is 290
