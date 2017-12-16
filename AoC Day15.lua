@@ -43,10 +43,9 @@ local generator2 = coroutine.create(function (val)
 
 local function judge()
   local acc = 0
-  local t1, t2, val_1, val_2 = true, true, 0, 0
   for i=1, iterations_2 do
-    t1, val_1 = coroutine.resume(generator1, input_1)
-    t2, val_2 = coroutine.resume(generator2, input_2)
+    _, val_1 = coroutine.resume(generator1, input_1)
+    _, val_2 = coroutine.resume(generator2, input_2)
     if val_1 == val_2 then
       acc = acc + 1
     end
