@@ -55,5 +55,3 @@ end
 
 --print(generators(input_1, input_2))
 print(judge())
-
---answer is 290
