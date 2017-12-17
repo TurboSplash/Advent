@@ -27,7 +27,6 @@ local function get_table_length(table)
   return length
 end
 
-
 local function sort_word(word)
   local length = #word
   repeat
@@ -45,8 +44,8 @@ end
 
 local function is_anagram(line)
   for i = 1, #line do
-    local word_length_i = get_table_length(line[i])
     for j = i + 1, #line do
+      local word_length_i = get_table_length(line[i])
       local word_length_j = get_table_length(line[j])
       if word_length_i == word_length_j then
         local equal = 0
