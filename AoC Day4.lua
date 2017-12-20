@@ -12,13 +12,6 @@ local function line_to_table(line)
   return table
 end
 
-local function swap_values(v1, v2)
-  local temp = v1
-  v1 = v2
-  v2 = temp
-  return v1, v2
-end
-
 local function get_table_length(table)
   length = 0
   for _ in pairs(table) do 
@@ -33,7 +26,7 @@ local function sort_word(word)
     local swapped = false
     for i = 1, length - 1 do
       if word[i] > word [i+1] then
-        word[i], word[i+1] = swap_values(word[i], word[i+1])
+        word[i], word[i+1] = word[i+1], word[i]
         swapped = true
       end
     end
@@ -99,4 +92,3 @@ local function validate_passphrases(path)
 end
 
 print(validate_passphrases(passphrases))
-
