@@ -91,7 +91,6 @@ local function route_packet()
   pos.x, pos.y = get_start_position()
   steps = steps + 1
   repeat
-    local finish = false
     move()
     steps = steps + 1
     if check_chars() then
