@@ -1,7 +1,7 @@
 local input = "input_day_19"
 
 local diagram = {}
-local directions = {up = "up", down = "down", left = "left", right = "right", finish = "finish"}
+local directions = {up = "up", down = "down", left = "left", right = "right"}
 local current_direction = directions.down
 local pos = { x = 0, y = 0 }
 local alphabet_soup = ""
