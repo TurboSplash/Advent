@@ -1,4 +1,4 @@
-local input = "input_day_18"
+local input = "input_day_19"
 
 local diagram = {}
 local directions = {up = "up", down = "down", left = "left", right = "right", finish = "finish"}
