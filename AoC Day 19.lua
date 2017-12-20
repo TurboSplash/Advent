@@ -40,12 +40,11 @@ end
 
 local function check_chars()
   local current_char = diagram[pos.y][pos.x]
-  if diagram[pos.y][pos.x] == "+" then
+  if current_char == "+" then
     return true
   end
   if current_char:match("%a") then
     alphabet_soup = alphabet_soup .. current_char
-    print("found character",  diagram[pos.y][pos.x])
   end
   return false
 end
