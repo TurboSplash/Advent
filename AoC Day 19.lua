@@ -35,7 +35,7 @@ local function change_direction()
       return directions.up
     end
   end
-  return directions.finish
+  return
 end
 
 local function check_chars()
